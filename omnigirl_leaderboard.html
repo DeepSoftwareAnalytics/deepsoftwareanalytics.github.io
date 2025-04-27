@@ -168,7 +168,7 @@
   <script>
     const tbody=document.getElementById("leaderboard-body");
     const radios=document.querySelectorAll('input[name="langradio"]');
-    const xhr=new XMLHttpRequest();xhr.open("GET","results.json",false);xhr.send();
+    const xhr=new XMLHttpRequest();xhr.open("GET","results/results.json",false);xhr.send();
     if(xhr.status!==200){alert("Failed to load results.json");}
     const raw=Object.values(JSON.parse(xhr.responseText));
     const keyMap={full:"%resolved_full",python:"%resolved_python",
