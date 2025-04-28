@@ -28,20 +28,10 @@
       table{font-size:small}
     }
 
-    /* 仅新增的样式 ↓↓↓ */
-    .icon-cell{
-      text-align:center;
-    }
-    .icon-cell img{
-      height:1.1em;
-    }
-    .icon-cell a{
-      display:inline-block;
-      font-size:1.1em;
-      line-height:1;
-      text-decoration:none;
-    }
-    /* ↑↑↑ */
+    /* 新增：Org / Site 图标尺寸 */
+    .icon-cell{text-align:center}
+    .icon-cell img{height:1.1em}
+    .icon-cell a{display:inline-block;font-size:1.1em;line-height:1;text-decoration:none}
   </style>
 </head>
 
@@ -50,26 +40,24 @@
 
     <h1 class="text-nowrap mt-5">🏆 OmniGIRL Leaderboard 🏆</h1>
     <h3 class="fw-light text-nowrap">
-      <small id="warning">A Multilingual & Multimodal Benchmark for GitHub Issue Resolution<br></small>
+      <small id="warning">A Multilingual &amp; Multimodal Benchmark for GitHub Issue Resolution<br></small>
     </h3>
 
     <!-- 徽章：GitHub / Paper / HF -->
     <div class="d-flex flex-row justify-content-center gap-3">
       <a href="https://github.com/DeepSoftwareAnalytics/OmniGIRL" target="_blank">
-        <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"
-             alt="github" class="img-fluid">
+        <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="github" class="img-fluid">
       </a>
       <a href="https://openreview.net/forum?id=yourISSTA25paperID" target="_blank">
-        <img src="https://img.shields.io/badge/Paper-ISSTA%2725-a55fed.svg?style=for-the-badge"
-             alt="paper" class="img-fluid">
+        <img src="https://img.shields.io/badge/Paper-ISSTA%2725-a55fed.svg?style=for-the-badge" alt="paper" class="img-fluid">
       </a>
+      <!-- 只改了这一行的链接 -->
       <a href="https://huggingface.co/datasets/Deep-Software-Analytics/OmniGIRL" target="_blank">
-        <img src="https://img.shields.io/badge/HuggingFace-%23f9ac00.svg?style=for-the-badge&logo=huggingface"
-             alt="hf" class="img-fluid">
+        <img src="https://img.shields.io/badge/HuggingFace-%23f9ac00.svg?style=for-the-badge&logo=huggingface" alt="hf" class="img-fluid">
       </a>
     </div>
 
-    <!-- 五语言按钮 -->
+    <!-- 语言切换 -->
     <div class="btn-group mt-3" role="group" id="Language">
       <input type="radio" class="btn-check" name="langradio" id="Full" value="full" checked>
       <label class="btn btn-outline-primary" for="Full">Full</label>
@@ -83,7 +71,7 @@
       <label class="btn btn-outline-primary" for="TypeScript">TypeScript</label>
     </div>
 
-    <!-- 排名表 -->
+    <!-- Leaderboard 表格 -->
     <table id="origin" class="table table-striped table-bordered border border-primary border-3 mt-4 w-100">
       <thead>
         <tr>
@@ -98,8 +86,67 @@
       <tbody id="leaderboard-body"></tbody>
     </table>
 
-    <!-- Notes（略，保持不动） -->
-    <!-- ... 其余静态内容不变 ... -->
+    <!-- 📝 Notes -->
+    <div id="notes" class="w-100">
+      <h3>📝 Notes</h3>
+      <div class="inline-block mt-3">
+        <ol>
+          <li><strong>OmniGIRL</strong> is a multilingual &amp; multimodal GitHub-issue-resolution benchmark with <strong>959 tasks</strong> spanning four programming languages. Inputs may include text, screenshots, rendered web pages and other modalities.</li>
+          <li>For realistic evaluation, <em>we recommend</em> that methods automatically examine each task’s raw input to detect available modalities (e.g., embedded webpages, images), retrieve the relevant content by themselves, and invoke the appropriate tools— instead of relying on manual hints. Doing so better assesses a solver’s <strong>general-purpose issue-resolution ability in real-world scenarios</strong>.</li>
+          <li>Our baseline system is released <em>for research purposes only</em>; please cite OmniGIRL if you use it.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 📨 How to Submit -->
+    <div id="notes" class="w-100">
+      <h3>📨 How&nbsp;to&nbsp;Submit</h3>
+      <div class="inline-block mt-3">
+        <ol>
+          <li>Prepare a <code>.json</code> or <code>.jsonl</code> file. Each record must contain at least the keys <code>instance_id</code>, <code>model_name_or_path</code>, and <code>model_patch</code>.</li>
+          <li>Email the file to <a href="mailto:guolh8@mail2.sysu.edu.cn?subject=OmniGIRL%20Submission">guolh8@mail2.sysu.edu.cn</a>.</li>
+          <li>We will evaluate your submission locally and update the leaderboard once the results are verified.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 🤗 More Leaderboards -->
+    <div id="notes" class="w-100">
+      <h3>🤗 More Leaderboards</h3>
+      <div class="inline-block mt-3">
+        <ol>
+          <li><a href="https://bigcode-bench.github.io/">BigCodeBench</a></li>
+          <li><a href="https://huggingface.co/spaces/bigcode/bigcode-models-leaderboard">Big Code Models</a></li>
+          <li><a href="https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard">Chatbot Arena</a></li>
+          <li><a href="https://github.com/amazon-science/cceval">CrossCodeEval</a></li>
+          <li><a href="https://fudanselab-classeval.github.io/">ClassEval</a></li>
+          <li><a href="https://crux-eval.github.io/leaderboard.html">CRUXEval</a></li>
+          <li><a href="https://codetlingua.github.io/leaderboard.html">Code Lingua</a></li>
+          <li><a href="https://evo-eval.github.io/">Evo-Eval</a></li>
+          <li><a href="https://huggingface.co/spaces/EffiBench/effibench-leaderboard">EffiBench</a></li>
+          <li><a href="https://github.com/01-ai/HumanEval.jl">HumanEval.jl</a></li>
+          <li><a href="https://livecodebench.github.io/leaderboard.html">LiveCodeBench</a></li>
+          <li><a href="https://sparksofagi.github.io/MHPP/">MHPP</a></li>
+          <li><a href="https://github.com/THUDM/NaturalCodeBench">NaturalCodeBench</a></li>
+          <li><a href="https://github.com/Leolty/repobench">RepoBench</a></li>
+          <li><a href="https://www.swebench.com/">SWE-bench</a></li>
+          <li><a href="https://leaderboard.tabbyml.com/">TabbyML</a></li>
+          <li><a href="https://llm4softwaretesting.github.io/">TestEval</a></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 🙏 Acknowledgements -->
+    <div id="notes" class="w-100 mb-5">
+      <h3>🙏 Acknowledgements</h3>
+      <div class="inline-block mt-3">
+        <ol>
+          <li>We build on prior work — <strong><a href="https://arxiv.org/abs/2310.06770" target="_blank">SWE-bench</a></strong>, <strong><a href="https://arxiv.org/abs/2407.01489" target="_blank">Agentless</a></strong>, and <strong><a href="https://arxiv.org/abs/2404.05427" target="_blank">AutoCodeRover</a></strong> — which laid the groundwork for this study.</li>
+          <li>We thank the <strong><a href="https://github.com/evalplus/evalplus" target="_blank">EvalPlus leaderboard</a></strong> team for releasing the elegant page template that inspired this site.</li>
+          <li>Finally, we are grateful to the <strong>open-source developer community</strong> for their invaluable contributions.</li>
+        </ol>
+      </div>
+    </div>
 
   </div><!-- /#content -->
 
