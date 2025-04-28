@@ -232,8 +232,13 @@
            .forEach((r, i) => {
              const medal = i === 0 ? '🥇 ' : i === 1 ? '🥈 '
                          : i === 2 ? '🥉 ' : '';
-             const orgIcon  = r.org  ? `<img src="${r.org}"  style="height:1.5em;">` : '-';
-             const siteLink = r.site ? `<a href="${r.site}" target="_blank">🔗</a>`   : '-';
+            
+             const orgUrl  = (r.org  || '').replace(/&amp;/g, '&');
+             const siteUrl = (r.site || '').replace(/&amp;/g, '&');
+            
+             const orgIcon  = orgUrl  ? `<img src="${orgUrl}"  style="height:1.5em;">` : '-';
+             const siteLink = siteUrl ? `<a href="${siteUrl}" target="_blank">🔗</a>` : '-';
+              
     
              tbody.insertAdjacentHTML('beforeend', `
                <tr>
