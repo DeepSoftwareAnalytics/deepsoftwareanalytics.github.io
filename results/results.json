@@ -7,7 +7,10 @@
       "%resolved_java": 0.105,
       "%resolved_javascript": 0.022,
       "%resolved_typescript": 0.019,
-      "date": "2025-04-27"
+      "date": "2025-04-27",
+      "org": "https://avatars.githubusercontent.com/u/139597579?s=200&amp;v=4",
+      "site": "https://github.com/SWE-bench/SWE-bench/tree/main/swebench/inference"
+
     },
     "Agentless-X (DeepSeek-V2.5)": {
       "method": "Agentless-v1-X",
@@ -17,7 +20,9 @@
       "%resolved_java": 0.029,
       "%resolved_javascript": 0.026,
       "%resolved_typescript": 0.019,
-      "date": "2025-04-27"
+      "date": "2025-04-27",
+      "org": "https://brand.illinois.edu/wp-content/uploads/2024/02/Color-Variation-Orange-Block-I-White-Background.png",
+      "site": "https://github.com/OpenAutoCoder/Agentless"
     },
     "AutoCodeRover-X (DeepSeek-V2.5)": {
       "method": "AutoCodeRover(v20240620)-X",
@@ -27,7 +32,9 @@
       "%resolved_java": 0.114,
       "%resolved_javascript": 0.037,
       "%resolved_typescript": 0.043,
-      "date": "2025-04-27"
+      "date": "2025-04-27",
+      "org": "https://tse1.mm.bing.net/th?id=OIP.f-cjZZfjsflFPeir8dUMxwHaJc&pid=Api",
+      "site": "https://github.com/AutoCodeRoverSG/auto-code-rover/tree/main"
     },
   
     "Oracle Retrieval (GPT-4o-2024-08-06)": {
@@ -38,7 +45,9 @@
       "%resolved_java": 0.067,
       "%resolved_javascript": 0.019,
       "%resolved_typescript": 0.033,
-      "date": "2025-04-27"
+      "date": "2025-04-27",
+      "org": "https://avatars.githubusercontent.com/u/139597579?s=200&amp;v=4",
+       "site": "https://github.com/SWE-bench/SWE-bench/tree/main/swebench/inference"
     },
     "Agentless-X (GPT-4o-2024-08-06)": {
       "method": "Agentless-v1-X",
@@ -48,7 +57,10 @@
       "%resolved_java": 0.181,
       "%resolved_javascript": 0.063,
       "%resolved_typescript": 0.062,
-      "date": "2025-04-27"
+      "date": "2025-04-27",
+      "org": "https://brand.illinois.edu/wp-content/uploads/2024/02/Color-Variation-Orange-Block-I-White-Background.png",
+      "site": "https://github.com/OpenAutoCoder/Agentless"
+
     },
     "AutoCodeRover-X (GPT-4o-2024-08-06)": {
       "method": "AutoCodeRover(v20240620)-X",
@@ -58,7 +70,9 @@
       "%resolved_java": 0.171,
       "%resolved_javascript": 0.037,
       "%resolved_typescript": 0.062,
-      "date": "2025-04-27"
+      "date": "2025-04-27",
+      "org": "https://tse1.mm.bing.net/th?id=OIP.f-cjZZfjsflFPeir8dUMxwHaJc&pid=Api",
+      "site": "https://github.com/AutoCodeRoverSG/auto-code-rover/tree/main"
     },
   
     "Oracle Retrieval (Claude-3.5-Sonnet-2024-06-25)": {
@@ -69,7 +83,9 @@
       "%resolved_java": 0.181,
       "%resolved_javascript": 0.085,
       "%resolved_typescript": 0.067,
-      "date": "2025-04-27"
+      "date": "2025-04-27",
+      "org": "https://avatars.githubusercontent.com/u/139597579?s=200&amp;v=4",
+       "site": "https://github.com/SWE-bench/SWE-bench/tree/main/swebench/inference"
     },
     "Agentless-X (Claude-3.5-Sonnet-2024-06-25)": {
       "method": "Agentless-v1-X",
@@ -79,7 +95,9 @@
       "%resolved_java": 0.181,
       "%resolved_javascript": 0.044,
       "%resolved_typescript": 0.057,
-      "date": "2025-04-27"
+      "date": "2025-04-27",
+      "org": "https://brand.illinois.edu/wp-content/uploads/2024/02/Color-Variation-Orange-Block-I-White-Background.png",
+      "site": "https://github.com/OpenAutoCoder/Agentless"
     },
     "AutoCodeRover-X (Claude-3.5-Sonnet-2024-06-25)": {
       "method": "AutoCodeRover(v20240620)-X",
@@ -89,7 +107,9 @@
       "%resolved_java": 0.190,
       "%resolved_javascript": 0.041,
       "%resolved_typescript": 0.043,
-      "date": "2025-04-27"
+      "date": "2025-04-27",
+      "org": "https://tse1.mm.bing.net/th?id=OIP.f-cjZZfjsflFPeir8dUMxwHaJc&pid=Api",
+      "site": "https://github.com/AutoCodeRoverSG/auto-code-rover/tree/main"
     }
   }
   

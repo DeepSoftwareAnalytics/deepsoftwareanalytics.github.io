@@ -69,7 +69,7 @@
     </div>
 
     <!-- 排名表 -->
-    <table id="origin" class="table table-striped table-bordered border border-primary border-3 mt-4 w-100">
+    <!-- <table id="origin" class="table table-striped table-bordered border border-primary border-3 mt-4 w-100">
       <thead>
         <tr>
           <th style="width:50%">Method</th>
@@ -79,7 +79,22 @@
         </tr>
       </thead>
       <tbody id="leaderboard-body"></tbody>
+    </table> -->
+
+    <table id="origin" class="table table-striped table-bordered border border-primary border-3 mt-4 w-100">
+      <thead>
+        <tr>
+          <th style="width:30%">Method</th>
+          <th style="width:20%">Model</th>
+          <th style="width:10%" class="text-center">%Resolved</th>
+          <th style="width:15%" class="text-center">Org</th>
+          <th style="width:15%" class="text-center">Site</th>
+          <th style="width:10%" class="text-center">Date</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body"></tbody>
     </table>
+    
 
     <!-- Notes -->
     <div id="notes" class="w-100">
@@ -186,28 +201,56 @@
 
   <!-- 渲染脚本：与之前一致 -->
   <script>
-    const tbody=document.getElementById("leaderboard-body");
-    const radios=document.querySelectorAll('input[name="langradio"]');
-    const xhr=new XMLHttpRequest();xhr.open("GET","results/results.json",false);xhr.send();
-    if(xhr.status!==200){alert("Failed to load results.json");}
-    const raw=Object.values(JSON.parse(xhr.responseText));
-    const keyMap={full:"%resolved_full",python:"%resolved_python",
-                  java:"%resolved_java",javascript:"%resolved_javascript",
-                  typescript:"%resolved_typescript"};
-    function render(lang){
-      tbody.innerHTML="";
-      const k=keyMap[lang];
-      raw.filter(r=>r[k]!=null).sort((a,b)=>b[k]-a[k]).forEach((r,i)=>{
-        const medal=i===0?"🥇 ":i===1?"🥈 ":i===2?"🥉 ":"";
-        tbody.insertAdjacentHTML("beforeend",
-          `<tr><td>${medal}${r.method}</td>
-               <td>${r.model}</td>
-               <td class="text-center">${(r[k]*100).toFixed(1)}%</td>
-               <td class="text-center">${r.date}</td></tr>`);
-      });
+    const tbody = document.getElementById("leaderboard-body");
+    const radios = document.querySelectorAll('input[name="langradio"]');
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "results/results.json", false);
+    xhr.send();
+    if (xhr.status !== 200) {
+      alert("Failed to load results.json");
     }
+    const raw = Object.values(JSON.parse(xhr.responseText));
+    const keyMap = {
+      full: "%resolved_full",
+      python: "%resolved_python",
+      java: "%resolved_java",
+      javascript: "%resolved_javascript",
+      typescript: "%resolved_typescript"
+    };
+    
+    function render(lang) {
+      tbody.innerHTML = "";
+      const k = keyMap[lang];
+      raw.filter(r => r[k] != null)
+        .sort((a, b) => b[k] - a[k])
+        .forEach((r, i) => {
+          const medal = i === 0 ? "🥇 " : i === 1 ? "🥈 " : i === 2 ? "🥉 " : "";
+    
+          // 读 org_icon 和 site_url
+          const orgIcon = r.org_icon
+            ? `<img src="${r.org}" alt="org" style="height:1.5em;margin:0.2em 0;">`
+            : "-";
+    
+          const siteLink = r.site_url
+            ? `<a href="${r.site}" target="_blank" style="text-decoration:none;">🔗</a>`
+            : "-";
+    
+          tbody.insertAdjacentHTML("beforeend", `
+            <tr>
+              <td>${medal}${r.method}</td>
+              <td>${r.model}</td>
+              <td class="text-center">${(r[k] * 100).toFixed(1)}%</td>
+              <td class="text-center">${orgIcon}</td>
+              <td class="text-center">${siteLink}</td>
+              <td class="text-center">${r.date}</td>
+            </tr>
+          `);
+        });
+    }
+    
     render("full");
-    radios.forEach(r=>r.addEventListener("change",()=>r.checked&&render(r.value)));
-  </script>
+    radios.forEach(r => r.addEventListener("change", () => r.checked && render(r.value)));
+    </script>
+    
 </body>
 </html>
